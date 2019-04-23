@@ -1,3 +1,4 @@
+import os
 import math
 import csv
 from scipy import stats
@@ -34,15 +35,14 @@ def ttest(writer, combo, a, b):
 
 def main():
     ctr = 0
-    path = "C:\\Users\\Neil Bardhan\\Desktop\\t test"
+    path = os.getcwd()
     start = time.time()
-#    ForecastAccuracyDemandHist-V13.1.csv
     results = open(path + '\\results.csv', 'wt', newline='')
     writer = csv.writer(results, delimiter = ',')
     head = ['var_1', 'var_2', 't_value', 'degrees_of_freedom', 'p_value', 'significant']
     writer.writerow(head)
     rstart = time.time()
-    csvFile = path + "\\NMttest.csv"
+    csvFile = path + "\\data\\NMttest.csv"
     with open(csvFile, newline='') as fp:
         reader = csv.DictReader(fp)
         data = {}

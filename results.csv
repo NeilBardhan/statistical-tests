@@ -1,0 +1,11 @@
+var_1,var_2,t_value,degrees_of_freedom,p_value,significant
+shiftClass21,shiftClass22,0.82611,68,0.411633,0
+shiftClass21,shiftClass23,-0.19873,48,0.843311,0
+shiftClass21,shiftClass31,2.94617,46,0.005036,1
+shiftClass21,shiftClass32,-0.4723,48,0.638854,0
+shiftClass22,shiftClass23,-0.83465,52,0.407732,0
+shiftClass22,shiftClass31,2.50554,50,0.015528,1
+shiftClass22,shiftClass32,-1.03299,52,0.306388,0
+shiftClass23,shiftClass31,2.3126,30,0.027787,1
+shiftClass23,shiftClass32,-0.25407,32,0.801066,0
+shiftClass31,shiftClass32,-2.33433,30,0.026464,1
