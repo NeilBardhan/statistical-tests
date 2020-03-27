@@ -5,7 +5,7 @@
 `shiftClass12` : Number of packages manufactured during that shift
 
 
-#### `Male Vs. Female Unemployment`
+#### `maleFemaleUnemployment.csv`
 
-`X` : x
-`Y` : y
+`X` : Male Unemployment Rate <br>
+`Y` : Female Unemployment Rate <br>
