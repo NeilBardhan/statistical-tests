@@ -7,5 +7,5 @@
 
 #### `maleFemaleUnemployment.csv`
 
-`X` : Male Unemployment Rate <br>
-`Y` : Female Unemployment Rate <br>
+`X` : National Unemployment Rate for Adult Males <br>
+`Y` : National Unemployment Rate for Adult Females<br>
