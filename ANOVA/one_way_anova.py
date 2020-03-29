@@ -8,26 +8,32 @@ path = os.getcwd()
 def load_data(data_file):
     return pd.read_csv(data_file, header = 'infer')
 
-def anova_scipy(data):
+def anova_scipy(data, alpha):    
+    report = {}
     xlist = []
     for col in data:
         xlist.append(data[col].dropna().values)
+    
     anova = stats.f_oneway(*xlist)
-    return anova
+    report["F_statistic"] = round(anova[0], 4)
+    report["p_value"] = round(anova[1], 4)
+    if report["p_value"] <= alpha:
+        report["significance"] = 1
+        report["reject_H0"] = 1
+    else:
+        report["significance"] = 0
+        report["reject_H0"] = 0
+    return report
 
 def main():
     data_file = path + '\\data\\NMttest.csv'
     df = load_data(data_file)
     alpha = 0.05
-    sig_flag = 0
-    anova0 = anova_scipy(df)
-    anova0_F = round(anova0[0], 4)
-    anova0_pval = round(anova0[1], 4)
-    if anova0_pval <= alpha:
-        sig_flag = 1
-    print("F Stat :  ", anova0_F)
-    print("P Value:  ", anova0_pval)
-    print("Significant Difference :  ", sig_flag)
+    anova_report = anova_scipy(df, alpha)
+    print("F Stat :  ", anova_report["F_statistic"])
+    print("P Value:  ", anova_report["p_value"])
+    print("Significant Difference :  ", anova_report["significance"])
+    print("Reject the null hypothesis:  ", anova_report["reject_H0"])
 
 if __name__ == '__main__':
     main()
