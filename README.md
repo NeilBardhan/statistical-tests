@@ -2,13 +2,15 @@
 
 <p align = "center">
  +---------------------+ <br>
- |   Work in progress  | <br>
+ |   Work in Progress  | <br>
  +---------------------+ <br>
- </p>
+</p>
+
 This git repo implements some statistical tools that come in handy for performing tests of significance. Chiefly among them are -
 
 * ANOVA
   * [One Way ANOVA](https://statistics.laerd.com/statistical-guides/one-way-anova-statistical-guide.php) Test
+  * [Kruskal Wallis H](https://www.statisticshowto.datasciencecentral.com/kruskal-wallis/) Test - A non parametric alternative to the One Way ANOVA. [Non parametric](https://www.statisticshowto.datasciencecentral.com/parametric-and-non-parametric-data/) implies that the test doesn’t assume the data comes from a particular  distribution. The H test is used when the assumptions for ANOVA aren’t met (like the [assumption of normality](https://www.statisticshowto.datasciencecentral.com/assumption-of-normality-test/)). Also known as, **one-way ANOVA on ranks**, as the ranks of the data values are used in the test rather than the actual data points.
  * T-Tests
     * 2 Sample Independent T-Tests
     * Paired T-Tests
