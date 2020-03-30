@@ -24,7 +24,6 @@ def anova(data, alpha):
         square_list.append(sum([i ** 2 for i in data[col].dropna().values]))
         ss_list.append(sum([(i - col_mean) ** 2 for i in data[col].dropna().values]))
     ssw = sum(ss_list)
-#    ssb = 
     sst = sum(square_list) - ((total_sum ** 2)/N)
     ssb = sst - ssw
     dfb = k - 1
@@ -33,7 +32,6 @@ def anova(data, alpha):
     msw = ssw/dfw
     F = round(msb/msw, 4)
     pvalue = round(stats.f.sf(F, dfb, dfw), 4)
-#    print(F, pvalue)
     report["F_statistic"] = F
     report["p_value"] = pvalue
     if report["p_value"] <= alpha:
@@ -61,17 +59,20 @@ def anova_scipy(data, alpha):
         report["reject_H0"] = 0
     return report
 
+def print_report(report):
+    print("F Stat :  ", report["F_statistic"])
+    print("P Value:  ", report["p_value"])
+    print("Significant Difference :  ", report["significance"])
+    print("Reject the null hypothesis:  ", report["reject_H0"])
+
 def main():
     data_file = path + '\\data\\NMttest.csv'
     df = load_data(data_file)
     alpha = 0.05
-    anova_report = anova_scipy(df, alpha)
-    print("F Stat :  ", anova_report["F_statistic"])
-    print("P Value:  ", anova_report["p_value"])
-    print("Significant Difference :  ", anova_report["significance"])
-    print("Reject the null hypothesis:  ", anova_report["reject_H0"])
-    anova_report = anova(df, alpha)
-    print(anova_report)
+    print("\nscipy\n")
+    print_report(anova_scipy(df, alpha))
+    print("\nmanual\n")
+    print_report(anova(df, alpha))
 
 if __name__ == '__main__':
     main()
