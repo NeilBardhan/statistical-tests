@@ -1,4 +1,4 @@
-2 ways to do one way ANOVA
+2 ways to perform one way ANOVA using scipy
 
 #### METHOD 1 - scipy ####
 a = [3, 1, 3, 2, 4, 3]
